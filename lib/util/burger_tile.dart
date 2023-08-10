@@ -10,7 +10,7 @@ class BurgerTile extends StatelessWidget {
   required this.burgerFlavor, 
   required this.burgerPrice, 
   required this.burgerColor, 
-  required this.burgerImageName,
+  required this.burgerImageName
   });
 
   @override

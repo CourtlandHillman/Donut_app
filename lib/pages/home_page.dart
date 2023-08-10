@@ -6,6 +6,7 @@ import '../tab/donut_tab.dart';
 import '../tab/pancake_tab.dart';
 import '../tab/pizza_tab.dart';
 import '../tab/smoothie_tab.dart';
+import 'card_page.dart';
 
 class HomePage extends StatefulWidget {
    const HomePage({super.key});
@@ -50,6 +51,10 @@ MyTab(
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+
+
+
+
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
@@ -86,7 +91,7 @@ MyTab(
           children: [
             //Text I wanna eat
 
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 36.0, vertical: 36.0),
               child: Row(
                 children: [
@@ -106,7 +111,7 @@ MyTab(
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
             // tab bar
@@ -114,7 +119,7 @@ MyTab(
            TabBar(tabs: myTabs),
 
 
-            // tab baar view
+            // tab bar view
             Expanded(child: 
             TabBarView(
               children: [
@@ -140,8 +145,22 @@ MyTab(
                 ],
                ),
               ),
+
+              
           ],
         ),
+        floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) {
+            return CartPage();
+          }),
+        ),
+        backgroundColor: Colors.black,
+        child: Icon(Icons.shopping_bag),
+      ),
+
+          
       ),
     );
   }
